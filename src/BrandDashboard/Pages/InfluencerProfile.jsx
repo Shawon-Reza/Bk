@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import Swal from "sweetalert2"
 
 // Mock data - replace with API call when backend is ready
 const mockInfluencerData = {
@@ -91,7 +92,7 @@ export default function InfluencerProfile() {
     const [influencer, setInfluencer] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const navigate= useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
         // Simulate API call - replace with actual backend integration
@@ -127,9 +128,29 @@ export default function InfluencerProfile() {
     }
 
     const handleMessage = () => {
-        console.log("[v0] Message button clicked for influencer:", influencer?.name)
-        // Add messaging functionality here
-    }
+        console.log("[v0] Message button clicked for influencer:", influencer?.name);
+
+        Swal.fire({
+            title: "Do you want to chat?",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            cancelButtonText: "No",
+            buttonsStyling: false, // ✅ disable default SweetAlert2 styling
+            customClass: {
+                actions: "flex justify-center gap-x-4", // 👈 add spacing between buttons
+                confirmButton:
+                    "bg-yellow-500 text-black font-semibold px-5 py-2 rounded-md border-2 border-yellow-500 hover:bg-yellow-600 transition",
+                cancelButton:
+                    "bg-white text-black font-semibold px-5 py-2 rounded-md border-2 border-yellow-500 hover:bg-gray-100 transition",
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                navigate(`message`);
+            }
+        });
+
+
+    };
 
     const handleSave = () => {
         console.log("[v0] Save button clicked for influencer:", influencer?.name)

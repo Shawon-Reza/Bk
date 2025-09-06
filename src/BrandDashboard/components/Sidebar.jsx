@@ -6,7 +6,7 @@ export function Sidebar() {
     const menuItems = [
         { name: "Dashboard", icon: "📊", path: "/brand-dashboard" },
         { name: "Micro-microinfluencerspage", icon: "👥", path: "microinfluencerspage" },
-        { name: "Campaigns", icon: "📢", path: "/campaigns" },
+        { name: "Campaigns", icon: "📢", path: "campaigns" },
         { name: "Messages", icon: "💬", path: "messages" },
         { name: "Subscription", icon: "💳", path: "/subscription" },
         { name: "Settings", icon: "⚙️", path: "settings" },
