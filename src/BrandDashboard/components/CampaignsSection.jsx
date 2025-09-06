@@ -17,7 +17,7 @@ export function CampaignsSection() {
   return (
     <div className="bg-white rounded-lg p-6 border border-slate-200">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-slate-800">Campaigns</h3>
+        <h3 className="text-xl font-semibold text-slate-800">Campaigns</h3>
         <button className="bg-yellow-500 hover:bg-yellow-600 text-slate-800 text-sm px-4 py-2 rounded-lg transition-colors font-medium">
           + Create new
         </button>

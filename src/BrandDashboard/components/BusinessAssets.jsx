@@ -1,8 +1,12 @@
+import { FaFileAlt, FaUpload } from "react-icons/fa"
+import { GrGallery } from "react-icons/gr"
+import { MdOutlineAddPhotoAlternate } from "react-icons/md"
+
 export function BusinessAssets() {
   const assets = [
-    { name: "Logo & Business Kit", icon: "📁" },
-    { name: "Business Guidelines", icon: "📋" },
-    { name: "Product Photos", icon: "📸" },
+    { name: "Logo & Business Kit", icon: <MdOutlineAddPhotoAlternate /> },
+    { name: "Business Guidelines", icon: <FaFileAlt /> },
+    { name: "Product Photos", icon: <GrGallery /> },
   ]
 
   return (
@@ -18,8 +22,8 @@ export function BusinessAssets() {
         ))}
       </div>
 
-      <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-slate-800 font-medium px-4 py-2 rounded-lg transition-colors">
-        📤 Upload New Assets
+      <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-slate-800 font-medium px-4 py-2 rounded-lg transition-colors flex items-center gap-3">
+        <FaUpload ></FaUpload> Upload New Assets
       </button>
     </div>
   )

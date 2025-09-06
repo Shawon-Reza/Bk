@@ -1,10 +1,12 @@
+import { FaEdit } from "react-icons/fa"
+import logo from "../../assets/img.png"
 export function DashboardHeader() {
   return (
     <div className="bg-white rounded-lg border-2 border-dashed border-blue-300 p-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <div className="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center">
-            <span className="text-blue-400 text-2xl font-bold">T</span>
+            <img src={logo} alt="logo" />
           </div>
           <div>
             <h2 className="text-xl font-bold text-slate-800">TechFlow Solutions</h2>
@@ -12,9 +14,9 @@ export function DashboardHeader() {
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <div className="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg font-medium">1055 Fill × 172.77 Hug</div>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-slate-800 font-medium px-4 py-2 rounded-lg transition-colors">
-            ✏️ Edit
+       
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-slate-800 font-medium px-4 py-2 rounded-lg transition-colors flex items-center gap-1 ">
+            <FaEdit /> Edit
           </button>
         </div>
       </div>

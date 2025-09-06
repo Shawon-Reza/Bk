@@ -1,15 +1,19 @@
 "use client"
 
 import { NavLink } from "react-router-dom"
+import logo from "../../assets/Group.png"
+import { MdCampaign, MdOutlineDashboard, MdOutlineGroup } from "react-icons/md"
+import { FiMessageSquare } from "react-icons/fi"
+import { IoSettingsOutline } from "react-icons/io5"
 
 export function Sidebar() {
     const menuItems = [
-        { name: "Dashboard", icon: "📊", path: "/brand-dashboard" },
-        { name: "Micro-microinfluencerspage", icon: "👥", path: "microinfluencerspage" },
-        { name: "Campaigns", icon: "📢", path: "campaigns" },
-        { name: "Messages", icon: "💬", path: "messages" },
+        { name: "Dashboard", icon: <MdOutlineDashboard size={21} />, path: "/brand-dashboard" },
+        { name: "Micro-microinfluencerspage", icon: <MdOutlineGroup size={25} />, path: "microinfluencerspage" },
+        { name: "Campaigns", icon: <MdCampaign  size={25}/>, path: "campaigns" },
+        { name: "Messages", icon: <FiMessageSquare size={20} />, path: "messages" },
         { name: "Subscription", icon: "💳", path: "/subscription" },
-        { name: "Settings", icon: "⚙️", path: "settings" },
+        { name: "Settings", icon: <IoSettingsOutline size={20} />, path: "settings" },
     ]
 
     return (
@@ -22,8 +26,11 @@ export function Sidebar() {
             {/* Logo Section */}
             <div className="p-6 border-b border-slate-700">
                 <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
-                        <span className="text-slate-800 font-bold text-lg">S</span>
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+
+                        {/* <span className="text-slate-800 font-bold text-lg">S</span> */}
+
+                        <img src={logo} alt="logo" />
                     </div>
                     <div>
                         <h1 className="font-bold text-lg">The Social</h1>
